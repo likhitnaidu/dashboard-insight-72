@@ -1,0 +1,274 @@
+{
+  "students": [
+    {
+      "id": "student-1",
+      "name": "Emma Johnson",
+      "avatar": "https://i.pravatar.cc/150?img=2",
+      "class": "10A",
+      "roll": "2024001",
+      "email": "emma.johnson@school.edu",
+      "progress": 88,
+      "attendance": 95,
+      "notes": "Excellent performance"
+    },
+    {
+      "id": "student-2",
+      "name": "Liam Smith",
+      "avatar": "https://i.pravatar.cc/150?img=3",
+      "class": "10A",
+      "roll": "2024002",
+      "email": "liam.smith@school.edu",
+      "progress": 76,
+      "attendance": 87,
+      "notes": "Needs improvement in math"
+    },
+    {
+      "id": "student-3",
+      "name": "Olivia Brown",
+      "avatar": "https://i.pravatar.cc/150?img=4",
+      "class": "10A",
+      "roll": "2024003",
+      "email": "olivia.brown@school.edu",
+      "progress": 92,
+      "attendance": 98,
+      "notes": "Very active in discussions"
+    },
+    {
+      "id": "student-4",
+      "name": "Noah Davis",
+      "avatar": "https://i.pravatar.cc/150?img=5",
+      "class": "10A",
+      "roll": "2024004",
+      "email": "noah.davis@school.edu",
+      "progress": 84,
+      "attendance": 91,
+      "notes": "Great problem solver"
+    },
+    {
+      "id": "student-5",
+      "name": "Ava Wilson",
+      "avatar": "https://i.pravatar.cc/150?img=6",
+      "class": "10B",
+      "roll": "2024005",
+      "email": "ava.wilson@school.edu",
+      "progress": 79,
+      "attendance": 89,
+      "notes": "Good team player"
+    },
+    {
+      "id": "student-6",
+      "name": "William Miller",
+      "avatar": "https://i.pravatar.cc/150?img=7",
+      "class": "10B",
+      "roll": "2024006",
+      "email": "william.miller@school.edu",
+      "progress": 67,
+      "attendance": 73,
+      "notes": "Needs more focus"
+    },
+    {
+      "id": "student-7",
+      "name": "Sophia Moore",
+      "avatar": "https://i.pravatar.cc/150?img=8",
+      "class": "10B",
+      "roll": "2024007",
+      "email": "sophia.moore@school.edu",
+      "progress": 96,
+      "attendance": 99,
+      "notes": "Outstanding student"
+    },
+    {
+      "id": "student-8",
+      "name": "James Taylor",
+      "avatar": "https://i.pravatar.cc/150?img=9",
+      "class": "10B",
+      "roll": "2024008",
+      "email": "james.taylor@school.edu",
+      "progress": 81,
+      "attendance": 86,
+      "notes": "Improving steadily"
+    },
+    {
+      "id": "student-9",
+      "name": "Isabella Anderson",
+      "avatar": "https://i.pravatar.cc/150?img=10",
+      "class": "11A",
+      "roll": "2024009",
+      "email": "isabella.anderson@school.edu",
+      "progress": 89,
+      "attendance": 94,
+      "notes": "Creative thinker"
+    },
+    {
+      "id": "student-10",
+      "name": "Benjamin Thomas",
+      "avatar": "https://i.pravatar.cc/150?img=11",
+      "class": "11A",
+      "roll": "2024010",
+      "email": "benjamin.thomas@school.edu",
+      "progress": 93,
+      "attendance": 97,
+      "notes": "Responsible student"
+    },
+    {
+      "id": "student-11",
+      "name": "Mia Jackson",
+      "avatar": "https://i.pravatar.cc/150?img=12",
+      "class": "11A",
+      "roll": "2024011",
+      "email": "mia.jackson@school.edu",
+      "progress": 75,
+      "attendance": 82,
+      "notes": "Excellent performance"
+    },
+    {
+      "id": "student-12",
+      "name": "Lucas White",
+      "avatar": "https://i.pravatar.cc/150?img=13",
+      "class": "11A",
+      "roll": "2024012",
+      "email": "lucas.white@school.edu",
+      "progress": 87,
+      "attendance": 91,
+      "notes": "Needs improvement in math"
+    },
+    {
+      "id": "student-13",
+      "name": "Charlotte Harris",
+      "avatar": "https://i.pravatar.cc/150?img=14",
+      "class": "11B",
+      "roll": "2024013",
+      "email": "charlotte.harris@school.edu",
+      "progress": 91,
+      "attendance": 96,
+      "notes": "Very active in discussions"
+    },
+    {
+      "id": "student-14",
+      "name": "Henry Martin",
+      "avatar": "https://i.pravatar.cc/150?img=15",
+      "class": "11B",
+      "roll": "2024014",
+      "email": "henry.martin@school.edu",
+      "progress": 83,
+      "attendance": 88,
+      "notes": "Great problem solver"
+    },
+    {
+      "id": "student-15",
+      "name": "Amelia Thompson",
+      "avatar": "https://i.pravatar.cc/150?img=16",
+      "class": "11B",
+      "roll": "2024015",
+      "email": "amelia.thompson@school.edu",
+      "progress": 78,
+      "attendance": 85,
+      "notes": "Good team player"
+    },
+    {
+      "id": "student-16",
+      "name": "Alexander Garcia",
+      "avatar": "https://i.pravatar.cc/150?img=17",
+      "class": "11B",
+      "roll": "2024016",
+      "email": "alexander.garcia@school.edu",
+      "progress": 94,
+      "attendance": 98,
+      "notes": "Needs more focus"
+    },
+    {
+      "id": "student-17",
+      "name": "Harper Martinez",
+      "avatar": "https://i.pravatar.cc/150?img=18",
+      "class": "12A",
+      "roll": "2024017",
+      "email": "harper.martinez@school.edu",
+      "progress": 86,
+      "attendance": 92,
+      "notes": "Outstanding student"
+    },
+    {
+      "id": "student-18",
+      "name": "Michael Robinson",
+      "avatar": "https://i.pravatar.cc/150?img=19",
+      "class": "12A",
+      "roll": "2024018",
+      "email": "michael.robinson@school.edu",
+      "progress": 80,
+      "attendance": 87,
+      "notes": "Improving steadily"
+    },
+    {
+      "id": "student-19",
+      "name": "Evelyn Clark",
+      "avatar": "https://i.pravatar.cc/150?img=20",
+      "class": "12A",
+      "roll": "2024019",
+      "email": "evelyn.clark@school.edu",
+      "progress": 90,
+      "attendance": 95,
+      "notes": "Creative thinker"
+    },
+    {
+      "id": "student-20",
+      "name": "Daniel Rodriguez",
+      "avatar": "https://i.pravatar.cc/150?img=21",
+      "class": "12A",
+      "roll": "2024020",
+      "email": "daniel.rodriguez@school.edu",
+      "progress": 85,
+      "attendance": 90,
+      "notes": "Responsible student"
+    }
+  ],
+  "teachers": [
+    {
+      "id": "teacher-1",
+      "name": "Mary Johnson",
+      "subject": "Mathematics",
+      "avatar": "https://i.pravatar.cc/150?img=22",
+      "email": "mary.johnson@school.edu"
+    },
+    {
+      "id": "teacher-2",
+      "name": "James Brown",
+      "subject": "Foreign Language",
+      "avatar": "https://i.pravatar.cc/150?img=23",
+      "email": "james.brown@school.edu"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "lesson-1",
+      "title": "Electronics",
+      "time": "10:00",
+      "duration": 90,
+      "teacher": "Mary Johnson",
+      "color": "#4B6CF6"
+    },
+    {
+      "id": "lesson-2",
+      "title": "Robotics",
+      "time": "12:00",
+      "duration": 120,
+      "teacher": "James Brown",
+      "color": "#10B981"
+    }
+  ],
+  "events": [
+    {
+      "id": "event-1",
+      "title": "Robot Fest",
+      "date": "2024-12-14",
+      "type": "workshop",
+      "color": "#F59E0B"
+    },
+    {
+      "id": "event-2",
+      "title": "AI Webinar",
+      "date": "2024-12-09",
+      "type": "webinar",
+      "color": "#8B5CF6"
+    }
+  ]
+}
