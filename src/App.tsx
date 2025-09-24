@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Lessons from "./pages/Lessons";
 import Schedule from "./pages/Schedule";
 import Materials from "./pages/Materials";
+import AITutor from "./pages/AITutor";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -19,6 +20,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/ai-tutor" element={<AITutor />} />
           <Route path="/lessons" element={<Lessons />} />
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/materials" element={<Materials />} />

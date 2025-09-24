@@ -11,12 +11,14 @@ import {
   Settings,
   LogOut,
   Menu,
-  GraduationCap
+  GraduationCap,
+  Brain
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const menuItems = [
   { icon: LayoutDashboard, label: 'Dashboard', path: '/' },
+  { icon: Brain, label: 'AI Tutor', path: '/ai-tutor' },
   { icon: BookOpen, label: 'Lessons', path: '/lessons' },
   { icon: Calendar, label: 'Schedule', path: '/schedule' },
   { icon: FolderOpen, label: 'Materials', path: '/materials' },
@@ -50,7 +52,7 @@ export default function Sidebar({ collapsed, onToggle }: SidebarProps) {
             <GraduationCap className="w-5 h-5 text-primary-foreground" />
           </div>
           {!collapsed && (
-            <h1 className="font-bold text-lg text-foreground">EduDash</h1>
+            <h1 className="font-bold text-lg text-foreground">Learn Aura</h1>
           )}
         </motion.div>
         
