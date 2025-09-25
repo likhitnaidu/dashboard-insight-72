@@ -90,12 +90,20 @@ export default function AITutor() {
     setCurrentMessage('');
 
     try {
-      // For demo purposes, simulate AI response
-      const aiResponse = generateMockAIResponse(content, context);
-      
+      // Call the actual AI tutor API
+      const { data, error } = await supabase.functions.invoke('ai-tutor', {
+        body: {
+          message: content,
+          context,
+          conversationHistory: messages.slice(-4) // Last 4 messages for context
+        }
+      });
+
+      if (error) throw error;
+
       const aiMessage: Message = {
         id: (Date.now() + 1).toString(),
-        content: aiResponse,
+        content: data.response || "I apologize, but I'm having trouble right now. Please try again.",
         isUser: false,
         timestamp: new Date(),
         context
@@ -103,7 +111,7 @@ export default function AITutor() {
 
       setMessages(prev => [...prev, aiMessage]);
 
-      // Save to localStorage for demo
+      // Save conversation
       if (activeConversationId) {
         updateLocalConversation(activeConversationId, content);
       } else {
@@ -112,10 +120,23 @@ export default function AITutor() {
 
     } catch (error) {
       console.error('Error sending message:', error);
+      
+      // Fallback to mock response if API fails
+      const fallbackResponse = generateMockAIResponse(content, context);
+      const aiMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        content: fallbackResponse,
+        isUser: false,
+        timestamp: new Date(),
+        context
+      };
+
+      setMessages(prev => [...prev, aiMessage]);
+      
       toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
-        variant: "destructive"
+        title: "Using offline mode",
+        description: "AI tutor is running in demo mode. Connect your OpenAI API key for full functionality.",
+        variant: "default"
       });
     } finally {
       setIsLoading(false);
