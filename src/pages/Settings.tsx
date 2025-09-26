@@ -29,8 +29,8 @@ interface UserProfile {
   id: string;
   email: string;
   full_name: string;
-  role: string;
-  stream?: string;
+  role: 'student' | 'teacher' | 'admin';
+  stream?: 'JEE' | 'NEET';
   avatar_url?: string;
 }
 

@@ -18,12 +18,13 @@ import { Badge } from '@/components/ui/badge';
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+import type { Json } from '@/integrations/supabase/types';
 
 interface Question {
   id: string;
   question: string;
-  options: string[];
-  correct_answer: string;
+  options: Json;
+  correct_answer: number;
   explanation: string;
   topic: string;
   subject: string;
@@ -48,7 +49,7 @@ export default function Assessment() {
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, string>>({});
   const [timeLeft, setTimeLeft] = useState(600); // 10 minutes
   const [isLoading, setIsLoading] = useState(false);
-  const [userStream, setUserStream] = useState<string>('JEE');
+  const [userStream, setUserStream] = useState<'JEE' | 'NEET'>('JEE');
   const [result, setResult] = useState<AssessmentResult | null>(null);
   const { toast } = useToast();
 
@@ -144,7 +145,7 @@ export default function Assessment() {
 
       questions.forEach((question, index) => {
         const userAnswer = selectedAnswers[index];
-        const isCorrect = userAnswer === question.correct_answer;
+        const isCorrect = userAnswer === String(question.correct_answer);
         
         if (isCorrect) correctCount++;
 
@@ -201,7 +202,7 @@ export default function Assessment() {
           stream: userStream,
           total_questions: questions.length,
           correct_answers: correctCount,
-          results: assessmentResult
+          results: assessmentResult as unknown as Json
         });
       }
 
@@ -373,7 +374,8 @@ export default function Assessment() {
                   </h2>
 
                   <div className="space-y-3">
-                    {questions[currentQuestion]?.options?.map((option, index) => (
+                    {Array.isArray(questions[currentQuestion]?.options) && 
+                     (questions[currentQuestion]?.options as string[])?.map((option, index) => (
                       <motion.div
                         key={index}
                         whileHover={{ scale: 1.02 }}

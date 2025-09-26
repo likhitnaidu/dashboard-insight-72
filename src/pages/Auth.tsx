@@ -53,9 +53,17 @@ export default function Auth() {
 
       // Redirect will be handled by auth state change
     } catch (error: any) {
+      let title = "Sign in failed";
+      let description = error.message;
+      
+      if (error.message === "Email not confirmed") {
+        title = "Email not verified";
+        description = "Please check your email and click the verification link before signing in. Check your spam folder if you don't see the email.";
+      }
+      
       toast({
-        title: "Sign in failed",
-        description: error.message,
+        title,
+        description,
         variant: "destructive"
       });
     } finally {
