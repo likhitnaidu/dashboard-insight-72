@@ -14,7 +14,191 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      assessment_questions: {
+        Row: {
+          correct_answer: number
+          created_at: string
+          difficulty: Database["public"]["Enums"]["difficulty_level"]
+          explanation: string | null
+          id: string
+          options: Json
+          question: string
+          stream: Database["public"]["Enums"]["stream_type"]
+          subject: string
+          topic: string
+        }
+        Insert: {
+          correct_answer: number
+          created_at?: string
+          difficulty?: Database["public"]["Enums"]["difficulty_level"]
+          explanation?: string | null
+          id?: string
+          options: Json
+          question: string
+          stream: Database["public"]["Enums"]["stream_type"]
+          subject: string
+          topic: string
+        }
+        Update: {
+          correct_answer?: number
+          created_at?: string
+          difficulty?: Database["public"]["Enums"]["difficulty_level"]
+          explanation?: string | null
+          id?: string
+          options?: Json
+          question?: string
+          stream?: Database["public"]["Enums"]["stream_type"]
+          subject?: string
+          topic?: string
+        }
+        Relationships: []
+      }
+      forum_posts: {
+        Row: {
+          author_id: string
+          category: string
+          content: string
+          created_at: string
+          id: string
+          likes: number
+          replies: number
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          author_id: string
+          category?: string
+          content: string
+          created_at?: string
+          id?: string
+          likes?: number
+          replies?: number
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          author_id?: string
+          category?: string
+          content?: string
+          created_at?: string
+          id?: string
+          likes?: number
+          replies?: number
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      forum_replies: {
+        Row: {
+          author_id: string
+          content: string
+          created_at: string
+          id: string
+          likes: number
+          post_id: string
+        }
+        Insert: {
+          author_id: string
+          content: string
+          created_at?: string
+          id?: string
+          likes?: number
+          post_id: string
+        }
+        Update: {
+          author_id?: string
+          content?: string
+          created_at?: string
+          id?: string
+          likes?: number
+          post_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "forum_replies_post_id_fkey"
+            columns: ["post_id"]
+            isOneToOne: false
+            referencedRelation: "forum_posts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          class_year: number | null
+          created_at: string
+          date_of_birth: string | null
+          email: string | null
+          full_name: string | null
+          id: string
+          phone: string | null
+          role: Database["public"]["Enums"]["user_role"]
+          school_name: string | null
+          stream: Database["public"]["Enums"]["stream_type"] | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          class_year?: number | null
+          created_at?: string
+          date_of_birth?: string | null
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          phone?: string | null
+          role?: Database["public"]["Enums"]["user_role"]
+          school_name?: string | null
+          stream?: Database["public"]["Enums"]["stream_type"] | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          class_year?: number | null
+          created_at?: string
+          date_of_birth?: string | null
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          phone?: string | null
+          role?: Database["public"]["Enums"]["user_role"]
+          school_name?: string | null
+          stream?: Database["public"]["Enums"]["stream_type"] | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      student_assessments: {
+        Row: {
+          completed_at: string
+          correct_answers: number
+          id: string
+          results: Json
+          stream: Database["public"]["Enums"]["stream_type"]
+          student_id: string
+          total_questions: number
+        }
+        Insert: {
+          completed_at?: string
+          correct_answers: number
+          id?: string
+          results: Json
+          stream: Database["public"]["Enums"]["stream_type"]
+          student_id: string
+          total_questions: number
+        }
+        Update: {
+          completed_at?: string
+          correct_answers?: number
+          id?: string
+          results?: Json
+          stream?: Database["public"]["Enums"]["stream_type"]
+          student_id?: string
+          total_questions?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +207,9 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      difficulty_level: "easy" | "medium" | "hard"
+      stream_type: "JEE" | "NEET"
+      user_role: "student" | "teacher" | "admin"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +336,10 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      difficulty_level: ["easy", "medium", "hard"],
+      stream_type: ["JEE", "NEET"],
+      user_role: ["student", "teacher", "admin"],
+    },
   },
 } as const
